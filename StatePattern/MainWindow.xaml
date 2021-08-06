@@ -38,11 +38,11 @@
         </Ellipse>
         <WrapPanel>
             <Label Content="1:53"
-                   FontSize="15"></Label>
+                   FontSize="14"></Label>
             <Slider Width="375"
                     Style="{StaticResource playSlider}"></Slider>
             <Label Content="3:03"
-                   FontSize="15"></Label>
+                   FontSize="14"></Label>
         </WrapPanel>
         <Grid Margin="0,80,0,0">
             <Grid.ColumnDefinitions>
@@ -52,15 +52,19 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="pauseBtn" 
                     Width="100" 
-                    Height="100"></Button>
+                    Height="100"
+                    Style="{StaticResource InformButton}"></Button>
             <Button x:Name="playBtn" 
                     Width="100"
                     Height="100"
-                    Grid.Column="1"></Button>
+                    Grid.Column="1"
+                    Style="{StaticResource InformButton}"></Button>
             <Button x:Name="stopBtn" 
                     Width="100"
                     Height="100"
-                    Grid.Column="2"></Button>
+                    Grid.Column="2"
+                    Style="{StaticResource InformButton}">
+            </Button>
         </Grid>
     </StackPanel>
 </Window>
