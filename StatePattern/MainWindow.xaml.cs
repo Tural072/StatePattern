@@ -24,5 +24,29 @@ namespace StatePattern
         {
             InitializeComponent();
         }
+
+        private void pauseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var player = new Player(new PauseState());
+            player.ClickPause();
+            player.ClickPlay();
+            player.ClickStop();
+        }
+
+        private void playBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var player = new Player(new PlayState());
+            player.ClickPause();
+            player.ClickPlay();
+            player.ClickStop();
+        }
+
+        private void stopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var player = new Player(new StopState());
+            player.ClickPause();
+            player.ClickPlay();
+            player.ClickStop();
+        }
     }
 }

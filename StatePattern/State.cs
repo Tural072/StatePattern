@@ -14,8 +14,8 @@ namespace StatePattern
             this._player = player;
         }
 
-        public abstract void Handle1();
-
-        public abstract void Handle2();
+        public abstract void ClickPause();
+        public abstract void ClickPlay();
+        public abstract void ClickStop();
     }
 }

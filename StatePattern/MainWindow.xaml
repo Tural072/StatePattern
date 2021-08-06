@@ -53,18 +53,22 @@
             <Button x:Name="pauseBtn" 
                     Width="100" 
                     Height="100"
-                    Style="{StaticResource InformButton}"></Button>
+                    Style="{StaticResource InformButton}"
+                    Click="pauseBtn_Click"></Button>
             <Button x:Name="playBtn" 
                     Width="100"
                     Height="100"
                     Grid.Column="1"
-                    Style="{StaticResource InformButton}"></Button>
+                    Style="{StaticResource InformButton}"
+                    Click="playBtn_Click"></Button>
             <Button x:Name="stopBtn" 
                     Width="100"
                     Height="100"
                     Grid.Column="2"
-                    Style="{StaticResource InformButton}">
+                    Style="{StaticResource InformButton}"
+                    Click="stopBtn_Click">
             </Button>
         </Grid>
+        <Label Name="lbl" FontSize="30"></Label>
     </StackPanel>
 </Window>
