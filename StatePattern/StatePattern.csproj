@@ -55,10 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Music.cs" />
     <Compile Include="PauseState.cs" />
     <Compile Include="PlayState.cs" />
     <Compile Include="State.cs" />
     <Compile Include="StopState.cs" />
+    <Compile Include="TimeState.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,7 +109,7 @@
     <Resource Include="Images\2pac.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\3.png" />
+    <Content Include="Music\2pac-only-god-can-judge-me.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

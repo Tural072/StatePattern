@@ -3,32 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 
 namespace StatePattern
 {
     public class PauseState : State
     {
-        public override void ClickPause()
+        public MediaPlayer MediaPlayer { get; set; }
+        public PauseState(MediaPlayer mediaPlayer)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.lbl.Content = "Pause";
-            mainWindow.ShowDialog();
+            MediaPlayer = mediaPlayer;
+        }
+        public override void ClickPause(MediaPlayer mediaPlayer,Music music,MainWindow mainWindow)
+        {
+            mediaPlayer.Pause();
         }
 
-        public override void ClickPlay()
+        public override void ClickPlay(MediaPlayer mediaPlayer, Music music, MainWindow mainWindow)
         {
-            this._player.changeState(new PlayState());
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.lbl.Content = "Play";
-            mainWindow.ShowDialog();
+            MessageBox.Show("");
         }
 
-        public override void ClickStop()
+        public override void ClickStop(MediaPlayer mediaPlayer, Music music, MainWindow mainWindow)
         {
-            this._player.changeState(new StopState());
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.lbl.Content = "Stop";
-            mainWindow.ShowDialog();
+            MessageBox.Show("");
+        }
+
+        public override void Time(MediaPlayer mediaPlayer, TimeSpan timeSpan, MainWindow mainWindow)
+        {
+            MessageBox.Show("");
         }
     }
 }

@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StatePattern"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="450"
+        Title="MainWindow" Height="710" Width="450"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="NoResize">
-    <StackPanel>
+    <StackPanel Background="Aqua">
         <Button HorizontalAlignment="Right" 
                 Width="30" 
                 Height="30"
@@ -18,17 +18,21 @@
                 Background="Transparent"
                 BorderThickness="0"
                 HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"></Button>
+                VerticalContentAlignment="Center"
+                Click="Button_Click"
+                ></Button>
         <Label Name="musicNameLbl"
                Content="Only God Can Judge Me"
                HorizontalContentAlignment="Center"
                FontSize="20"
-               Margin="0,40,0,0"></Label>
+               Margin="0,20,0,0"
+               ></Label>
         <Label Name="authorNameLbl"
                Content="Tupac Shakur"
                HorizontalContentAlignment="Center"
                FontSize="12"
-               Margin="0,0,0,60"></Label>
+               Margin="0,0,0,60"
+               ></Label>
         <Ellipse Height="250" 
                  Width="250"
                  Margin="0,0,0,50">
@@ -37,12 +41,22 @@
             </Ellipse.Fill>
         </Ellipse>
         <WrapPanel>
-            <Label Content="1:53"
-                   FontSize="14"></Label>
-            <Slider Width="375"
-                    Style="{StaticResource playSlider}"></Slider>
-            <Label Content="3:03"
-                   FontSize="14"></Label>
+            <Label Content="0:00"
+                   FontSize="14"
+                   Name="startLbl"
+                   Margin="15,0,0,0"
+                   ></Label>
+            <Slider Width="345"
+                    Style="{StaticResource playSlider}"
+                    Name="slider"
+                    IsMoveToPointEnabled="True"
+                    Thumb.DragStarted="TimeSlider_DragStarted"
+                    Thumb.DragCompleted="TimeSlider_DragCompleted"
+                    ></Slider>
+            <Label Content="0:00"
+                   FontSize="14"
+                   Name="endLbl"
+                   ></Label>
         </WrapPanel>
         <Grid Margin="0,80,0,0">
             <Grid.ColumnDefinitions>
@@ -54,19 +68,32 @@
                     Width="100" 
                     Height="100"
                     Style="{StaticResource InformButton}"
-                    Click="pauseBtn_Click"></Button>
+                    Click="pauseBtn_Click"
+                    Content="PAUSE"
+                    FontSize="20"
+                    HorizontalContentAlignment="Center"
+                    VerticalAlignment="Center"></Button>
             <Button x:Name="playBtn" 
                     Width="100"
                     Height="100"
                     Grid.Column="1"
                     Style="{StaticResource InformButton}"
-                    Click="playBtn_Click"></Button>
+                    Click="playBtn_Click"
+                    Content="PLAY"
+                    FontSize="20"
+                    HorizontalContentAlignment="Center"
+                    VerticalAlignment="Center"></Button>
             <Button x:Name="stopBtn" 
                     Width="100"
                     Height="100"
                     Grid.Column="2"
                     Style="{StaticResource InformButton}"
-                    Click="stopBtn_Click">
+                    Click="stopBtn_Click"
+                    Content="STOP"
+                    FontSize="20"
+                    HorizontalContentAlignment="Center"
+                    VerticalAlignment="Center"
+                    >
             </Button>
         </Grid>
         <Label Name="lbl" FontSize="30"></Label>

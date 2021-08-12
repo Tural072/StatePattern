@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace StatePattern
 {
@@ -19,17 +21,22 @@ namespace StatePattern
             this._state.SetPlayer(this);
         }
 
-        public void ClickPlay() 
+        public void ClickPlay(MediaPlayer mediaPlayer,Music music,MainWindow mainWindow) 
         {
-            this._state.ClickPlay();
+            this._state.ClickPlay(mediaPlayer,music,mainWindow);
         }
-        public void ClickPause()
+        public void ClickPause(MediaPlayer mediaPlayer, Music music, MainWindow mainWindow)
         {
-            this._state.ClickPause();
+            this._state.ClickPause(mediaPlayer, music, mainWindow);
         }
-        public void ClickStop()
+        public void ClickStop(MediaPlayer mediaPlayer, Music music, MainWindow mainWindow)
         {
-            this._state.ClickStop();
+            this._state.ClickStop(mediaPlayer, music, mainWindow);
+        }
+
+        public void Time(MediaPlayer mediaPlayer, TimeSpan timeSpan, MainWindow mainWindow)
+        {
+            this._state.Time(mediaPlayer, timeSpan, mainWindow);
         }
     }
 }
